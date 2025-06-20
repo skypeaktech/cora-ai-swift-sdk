@@ -8,13 +8,13 @@ let packageName = "CoraSDK"
 // END KMMBRIDGE BLOCK
 
 let package = Package(
-    name: packageName,
+    name: "CoraAISdk",
     platforms: [
         .iOS(.v13)
     ],
     products: [
         .library(
-            name: packageName,
+            name: "CoraAISdk",
             type: .dynamic,
             targets: [packageName + "Target"]
         ),
