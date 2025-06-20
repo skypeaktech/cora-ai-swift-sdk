@@ -15,13 +15,9 @@ Using **Xcode UI**:
 1. Open your project in Xcode.
 2. Navigate to **File > Add Packages...**
 3. Enter the repository URL:
-
-```
 [https://gitlab.skypeaktech.com/cora/cora-ai-swift-sdk](https://gitlab.skypeaktech.com/cora/cora-ai-swift-sdk)
 
-```
-
-4. Choose the latest available version (e.g. `2.0.6`) and press **Add Package**.
+4. Choose the latest available version (e.g. `2.0.8`) and press **Add Package**.
 
 ---
 
