@@ -16,7 +16,7 @@ let package = Package(
         .library(
             name: packageName,
             type: .dynamic,
-            targets: [packageName + "Wrapper"]
+            targets: [packageName + "Target"]
         ),
     ],
     dependencies: [
@@ -27,6 +27,10 @@ let package = Package(
             name: packageName,
             url: remoteKotlinUrl,
             checksum: remoteKotlinChecksum
+        ),
+        .target(
+          name: packageName + "Target",
+          dependencies: [.target(name: packageName + "Wrapper")]
         ),
         .target(
             name: packageName + "Wrapper",
