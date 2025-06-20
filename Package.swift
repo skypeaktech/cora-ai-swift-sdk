@@ -2,8 +2,8 @@
 import PackageDescription
 
 // BEGIN KMMBRIDGE VARIABLES BLOCK (do not edit)
-let remoteKotlinUrl = "https://us-central1-maven.pkg.dev/kubernetes-411520/spt-maven/CORA/cora-sdk-kmmbridge/2.0.6/cora-sdk-kmmbridge-2.0.6.zip"
-let remoteKotlinChecksum = "2a7696577dafa0c40c3ab4bf83b179d4ee24dfa4c0959b88262e0d09c7416ddc"
+let remoteKotlinUrl = "https://us-central1-maven.pkg.dev/kubernetes-411520/spt-maven/CORA/cora-sdk-kmmbridge/2.0.8/cora-sdk-kmmbridge-2.0.8.zip"
+let remoteKotlinChecksum = "f16b5ff7b08b5db51cecf1b35fc42c8be121254a3bd2df4d5e4e39a427eb7898"
 let packageName = "CoraSDK"
 // END KMMBRIDGE BLOCK
 
@@ -15,15 +15,30 @@ let package = Package(
     products: [
         .library(
             name: packageName,
-            targets: [packageName]
+            type: .dynamic,
+            targets: [packageName + "Wrapper"]
         ),
+    ],
+    dependencies: [
+        .package(name: "Firebase", url: "https://github.com/firebase/firebase-ios-sdk.git", .exact("11.9.0"))
     ],
     targets: [
         .binaryTarget(
             name: packageName,
             url: remoteKotlinUrl,
             checksum: remoteKotlinChecksum
+        ),
+        .target(
+            name: packageName + "Wrapper",
+            dependencies: [
+                .target(name: packageName),
+                .product(name: "FirebaseAuth", package: "Firebase"),
+                .product(name: "FirebaseCore", package: "Firebase"),
+                .product(name: "FirebaseFirestore", package: "Firebase"),
+                .product(name: "FirebaseFunctions", package: "Firebase"),
+                .product(name: "FirebaseInstallations", package: "Firebase"),
+                .product(name: "FirebaseRemoteConfig", package: "Firebase")
+            ]
         )
-        ,
     ]
 )
