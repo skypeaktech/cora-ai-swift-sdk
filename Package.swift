@@ -2,7 +2,7 @@
 import PackageDescription
 
 // BEGIN KMMBRIDGE VARIABLES BLOCK (do not edit)
-let remoteKotlinUrl = "https://us-central1-maven.pkg.dev/kubernetes-411520/spt-maven/com/skypeaktech/cora/cora-sdk-kmmbridge/2.0.8/cora-sdk-kmmbridge-2.0.8.zip"
+let remoteKotlinUrl = "https://us-central1-maven.pkg.dev/kubernetes-411520/spt-maven/com/skypeaktech/cora/cora-sdk-kmmbridge/2.0.9/cora-sdk-kmmbridge-2.0.9.zip"
 let remoteKotlinChecksum = "f16b5ff7b08b5db51cecf1b35fc42c8be121254a3bd2df4d5e4e39a427eb7898"
 let packageName = "CoraSDK"
 // END KMMBRIDGE BLOCK
