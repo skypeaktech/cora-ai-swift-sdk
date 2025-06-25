@@ -16,7 +16,7 @@ let package = Package(
         .library(
             name: "CoraAISdk",
             type: .dynamic,
-            targets: [packageName + "Target"]
+            targets: ["CoraAISdk"]
         ),
     ],
     dependencies: [
@@ -29,11 +29,7 @@ let package = Package(
             checksum: remoteKotlinChecksum
         ),
         .target(
-          name: packageName + "Target",
-          dependencies: [.target(name: packageName + "Wrapper")]
-        ),
-        .target(
-            name: packageName + "Wrapper",
+            name: "CoraAISdk",
             dependencies: [
                 .target(name: packageName),
                 .product(name: "FirebaseAuth", package: "Firebase"),
