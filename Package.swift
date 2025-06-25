@@ -15,7 +15,7 @@ let package = Package(
     products: [
         .library(
             name: "CoraAISdk",
-            type: .dynamic,
+            type: .static,
             targets: ["CoraAISdk"]
         ),
     ],
